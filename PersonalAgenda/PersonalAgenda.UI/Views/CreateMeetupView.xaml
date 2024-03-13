@@ -1,0 +1,90 @@
+﻿<Window x:Class="PersonalAgenda.UI.Views.CreateMeetupView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalAgenda.UI.Views"
+        mc:Ignorable="d"
+        Title="CreateMeetupView" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+
+            <!--Name-->
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+
+            <!--Description-->
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+
+            <!--DateTime-->
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+
+            <!--City-->
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            
+            <!--Location-->
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+
+            <!--Button-->
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <!-- Name -->
+        <TextBlock  Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" FontSize="14" FontWeight="Light"
+                    Foreground="Gray">Name
+        </TextBlock>
+        <TextBox x:Name="NameTextBox" Grid.Row="3" Grid.Column="1" FontSize="16"></TextBox>
+
+        <!-- Description -->
+        <TextBlock  Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" FontSize="14" FontWeight="Light"
+                    Foreground="Gray">Description
+        </TextBlock>
+        <TextBox x:Name="DescriptionTextBox" Grid.Row="7" Grid.Column="1" FontSize="16"></TextBox>
+
+        <!-- Location -->
+        <TextBlock  Grid.Row="9" Grid.Column="1" VerticalAlignment="Bottom" FontSize="14" FontWeight="Light"
+                    Foreground="Gray">Location
+        </TextBlock>
+        <TextBox x:Name="LocationTextBox" Grid.Row="11" Grid.Column="1" FontSize="16"></TextBox>
+
+        <!-- DateTime -->
+        <TextBlock  Grid.Row="13" Grid.Column="1" VerticalAlignment="Bottom" FontSize="14" FontWeight="Light"
+                    Foreground="Gray">DateTime (M/d/yyyy h:mm:ss tt)
+        </TextBlock>
+        <TextBox x:Name="DateTimeTextBox" Grid.Row="15" Grid.Column="1" FontSize="16"></TextBox>
+
+        <!-- City -->
+        <TextBlock  Grid.Row="17" Grid.Column="1" VerticalAlignment="Bottom" FontSize="14" FontWeight="Light"
+                    Foreground="Gray">City
+        </TextBlock>
+        <TextBox x:Name="CityTextBox" Grid.Row="19" Grid.Column="1" FontSize="16"></TextBox>
+
+        <!--  Button -->
+        <Button Name="SaveButton" Grid.Column="1" Grid.Row="21" Width="100" 
+                HorizontalAlignment="Center">Save</Button>
+    </Grid>
+</Window>
