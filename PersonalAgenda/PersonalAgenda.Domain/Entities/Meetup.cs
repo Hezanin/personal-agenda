@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonalAgenda.Domain.Entities
 {
-    public class Meetup : IErrand, IMeetup
+    public class Meetup : IEntity, IErrand
     {
         public Guid Id { get; set; }
 

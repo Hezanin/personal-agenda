@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace PersonalAgenda.Domain.Entities
 {
-    public class Meeting : IErrand, IMeeting
+    public class Meeting : IEntity, IErrand
     {
         public Guid Id { get; set; }
 

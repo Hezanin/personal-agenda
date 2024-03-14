@@ -16,7 +16,7 @@ namespace PersonalAgenda.EFDataAccess.Repositories
         {
         }
 
-        public async Task<IEnumerable<IMeeting>> GetMeetingByNameAsync(string meetingName)
+        public async Task<IEnumerable<Meeting>> GetMeetingByNameAsync(string meetingName)
         {
             if (meetingName == null)
             {

@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAgenda.UI", "PersonalAgenda.UI\PersonalAgenda.UI.csproj", "{7CA16955-43E2-4E0E-91CC-D088BDE4F7A8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAgenda.DataAccess", "PersonalAgenda.DataAccess\PersonalAgenda.DataAccess.csproj", "{8D13CE95-F64B-45BB-BDCE-18461E278E9D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAgenda.Domain", "PersonalAgenda.Domain\PersonalAgenda.Domain.csproj", "{881F221B-F144-432C-8700-57E741BEC79F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAgenda.Interfaces", "PersonalAgenda.Interfaces\PersonalAgenda.Interfaces.csproj", "{F8A9E8A2-F475-483C-85A4-F0C11E261A69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalAgenda.EFDataAccess", "PersonalAgenda.EFDataAccess\PersonalAgenda.EFDataAccess.csproj", "{CC1B2F64-0575-4B7F-9CD6-45F905F7A27D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAgenda.EFDataAccess", "PersonalAgenda.EFDataAccess\PersonalAgenda.EFDataAccess.csproj", "{CC1B2F64-0575-4B7F-9CD6-45F905F7A27D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalAgenda.Api", "PersonalAgenda.Api\PersonalAgenda.Api.csproj", "{11A5DC71-146A-428B-8386-6F2ADFC0953A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAgenda.Api", "PersonalAgenda.Api\PersonalAgenda.Api.csproj", "{11A5DC71-146A-428B-8386-6F2ADFC0953A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,14 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7CA16955-43E2-4E0E-91CC-D088BDE4F7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CA16955-43E2-4E0E-91CC-D088BDE4F7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CA16955-43E2-4E0E-91CC-D088BDE4F7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CA16955-43E2-4E0E-91CC-D088BDE4F7A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D13CE95-F64B-45BB-BDCE-18461E278E9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D13CE95-F64B-45BB-BDCE-18461E278E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D13CE95-F64B-45BB-BDCE-18461E278E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D13CE95-F64B-45BB-BDCE-18461E278E9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{881F221B-F144-432C-8700-57E741BEC79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{881F221B-F144-432C-8700-57E741BEC79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{881F221B-F144-432C-8700-57E741BEC79F}.Release|Any CPU.ActiveCfg = Release|Any CPU

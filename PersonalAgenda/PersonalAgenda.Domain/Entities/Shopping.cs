@@ -4,19 +4,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PersonalAgenda.Domain.Entities
 {
-    public class Shopping : IErrand, IShopping
+    public class Shopping : IEntity, IErrand
     {
         public Guid Id { get; set; }
 
-        [Required]
         public string Name { get; set; }
 
-        [Required]
         public string Description { get; set; }
 
         public string? Location { get; set; }
 
-        [Column(TypeName = "decimal(18, 2)")]
         public decimal Budget { get; set; }
 
         public override bool Equals(object? obj)

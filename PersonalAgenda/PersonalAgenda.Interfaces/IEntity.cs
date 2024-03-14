@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace PersonalAgenda.Interfaces
 {
-    public interface IErrand
+    public interface IEntity
     {
-        public string Name { get; set; }
-
-        public string Description { get; set; }
-
-        public string? Location { get; set; }
+        public Guid Id { get; set; }
     }
 }
