@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PersonalAgenda.EFDataAccess.Repositories
 {
-    public abstract class Repository<T> : IRepository<IEntity> where T : class, IEntity
+    public class Repository<IEntity> : IRepository<IEntity> where IEntity : class
     {
         protected readonly PersonalAgendaContext personalAgendaContext;
 

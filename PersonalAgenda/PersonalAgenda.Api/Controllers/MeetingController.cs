@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PersonalAgenda.Domain.Dtos;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,10 +11,10 @@ namespace PersonalAgenda.Api.Controllers
     {
         // GET: api/<MeetingController>
         [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        //public async IActionResult Get()
+        //{
+            
+        //}
 
         // GET api/<MeetingController>/5
         [HttpGet("{id}")]

@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAgenda.EFDataAccess
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalAgenda.Api", "PersonalAgenda.Api\PersonalAgenda.Api.csproj", "{11A5DC71-146A-428B-8386-6F2ADFC0953A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalAgenda.Business", "PersonalAgenda.Business\PersonalAgenda.Business.csproj", "{C1FE2390-A006-4ED7-B2C0-819CEB165A44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{11A5DC71-146A-428B-8386-6F2ADFC0953A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11A5DC71-146A-428B-8386-6F2ADFC0953A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11A5DC71-146A-428B-8386-6F2ADFC0953A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1FE2390-A006-4ED7-B2C0-819CEB165A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1FE2390-A006-4ED7-B2C0-819CEB165A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1FE2390-A006-4ED7-B2C0-819CEB165A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1FE2390-A006-4ED7-B2C0-819CEB165A44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

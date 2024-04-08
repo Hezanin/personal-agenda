@@ -2,16 +2,16 @@
 
 namespace PersonalAgenda.EFDataAccess.Repositories
 {
-    public interface IRepository<T>
+    public interface IRepository<IEntity> where IEntity : class
     {
-        public Task<T> AddAsync(T errand);
+        public Task<IEntity> AddAsync(IEntity errand);
 
-        public Task DeleteAsync(T errand);
+        public Task DeleteAsync(IEntity errand);
 
-        public Task<IQueryable<T>> GetAllAsync();
+        public Task<IQueryable<IEntity>> GetAllAsync();
 
-        public Task<T> GetByIdAsync(Guid Id);
+        public Task<IEntity> GetByIdAsync(Guid Id);
 
-        public Task<T> UpdateAsync(T errand);
+        public Task<IEntity> UpdateAsync(IEntity errand);
     }
 }

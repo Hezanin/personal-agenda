@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PersonalAgenda.EFDataAccess.Repositories
 {
-    public class MeetingRepository : Repository<Meeting>
+    public class MeetingRepository : Repository<Meeting>, IMeetingRepository
     {
         public MeetingRepository(PersonalAgendaContext personalAgendaContext) : base(personalAgendaContext)
         {
@@ -23,7 +23,9 @@ namespace PersonalAgenda.EFDataAccess.Repositories
                 throw new ArgumentNullException();
             }
 
-            return await this.personalAgendaContext.Meetings.AsNoTracking().Where(m => m.Name == meetingName).ToListAsync();
+            IQueryable<Meeting> allMeetings = await GetAllAsync();
+
+            return allMeetings.Where(m => m.Name == meetingName).ToList();
         }
     }
 }
