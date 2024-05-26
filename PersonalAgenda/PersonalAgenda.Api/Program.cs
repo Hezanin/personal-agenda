@@ -1,8 +1,11 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using PersonalAgenda.Business;
+using PersonalAgenda.Business.Queries;
 using PersonalAgenda.EFDataAccess;
 using PersonalAgenda.EFDataAccess.Repositories;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,17 +17,19 @@ var config = new MapperConfiguration(cfg =>
 var mapper = config.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetMeetingsQuery).GetTypeInfo().Assembly));
 
 builder.Services.AddDbContext<PersonalAgendaContext>(
     options => options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
         ));
 
-builder.Services.AddSingleton<IMeetingRepository, MeetingRepository>();
+builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 

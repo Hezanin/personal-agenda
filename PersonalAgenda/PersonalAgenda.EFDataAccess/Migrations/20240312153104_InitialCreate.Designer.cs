@@ -11,7 +11,7 @@ using PersonalAgenda.EFDataAccess;
 
 namespace PersonalAgenda.EFDataAccess.Migrations
 {
-    [DbContext(typeof(PersonalAgendaContext))]
+    [DbContext(typeof(DbContext))]
     [Migration("20240312153104_InitialCreate")]
     partial class InitialCreate
     {

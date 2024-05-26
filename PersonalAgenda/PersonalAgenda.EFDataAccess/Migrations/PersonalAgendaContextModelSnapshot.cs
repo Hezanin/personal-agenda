@@ -10,7 +10,7 @@ using PersonalAgenda.EFDataAccess;
 
 namespace PersonalAgenda.EFDataAccess.Migrations
 {
-    [DbContext(typeof(PersonalAgendaContext))]
+    [DbContext(typeof(DbContext))]
     partial class PersonalAgendaContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

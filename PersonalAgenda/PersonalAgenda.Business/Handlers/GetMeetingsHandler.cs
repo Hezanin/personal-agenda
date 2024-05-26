@@ -1,6 +1,8 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using PersonalAgenda.Business.Queries;
 using PersonalAgenda.Domain.Dtos;
+using PersonalAgenda.Domain.Entities;
 using PersonalAgenda.EFDataAccess.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,17 +14,21 @@ namespace PersonalAgenda.Business.Handlers
 {
     public class GetMeetingsHandler : IRequestHandler<GetMeetingsQuery, IEnumerable<MeetingDto>>
     {
-        public readonly IMeetingRepository meetingRepository;
+        private readonly IMeetingRepository meetingRepository;
+        private readonly IMapper mapper;
 
-        public GetMeetingsHandler(IMeetingRepository meetingRepository)
+        public GetMeetingsHandler(IMeetingRepository meetingRepository, IMapper mapper)
         {
             this.meetingRepository = meetingRepository ?? throw new ArgumentNullException(nameof(meetingRepository));
+            this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public Task<IEnumerable<MeetingDto>> Handle(GetMeetingsQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<MeetingDto>> Handle(GetMeetingsQuery request, CancellationToken cancellationToken)
         {
-            
-            throw new NotImplementedException();
+            IEnumerable<Meeting> meetings = await this.meetingRepository.GetAllAsync();
+            IEnumerable<MeetingDto> meetingDtos = mapper.Map<IEnumerable<MeetingDto>>(meetings);
+
+            return meetingDtos;
         }
     }
 }
