@@ -4,13 +4,8 @@ using PersonalAgenda.Business.Commands;
 using PersonalAgenda.Domain.Dtos;
 using PersonalAgenda.Domain.Entities;
 using PersonalAgenda.EFDataAccess.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PersonalAgenda.Business.Handlers
+namespace PersonalAgenda.Business.Handlers.CommandHandlers
 {
     public class PostMeetupHandler : IRequestHandler<PostMeetupCommand, MeetupDto>
     {
@@ -25,14 +20,13 @@ namespace PersonalAgenda.Business.Handlers
 
         public async Task<MeetupDto> Handle(PostMeetupCommand request, CancellationToken cancellationToken)
         {
-            if (request.RequestedMeetup == null)
+            if (request.Meetup == null)
             {
-                throw new ArgumentNullException(nameof(request.RequestedMeetup));
+                throw new ArgumentNullException(nameof(request.Meetup));
             }
 
-            Meetup meetup = mapper.Map<Meetup>(request.RequestedMeetup); 
-
-            return this.mapper.Map<MeetupDto>(await this.meetupRepository.AddAsync(meetup));
+            return mapper.Map<MeetupDto>(await meetupRepository
+                .AddAsync(mapper.Map<Meetup>(request.Meetup)));
         }
     }
 }

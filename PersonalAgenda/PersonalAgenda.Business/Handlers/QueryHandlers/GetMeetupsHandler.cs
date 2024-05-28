@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalAgenda.Business.Handlers
+namespace PersonalAgenda.Business.Handlers.QueryHandlers
 {
     public class GetMeetupsHandler : IRequestHandler<GetMeetupsQuery, IEnumerable<MeetupDto>>
     {
@@ -20,14 +20,14 @@ namespace PersonalAgenda.Business.Handlers
 
         public GetMeetupsHandler(IRepository<Meetup> repository, IMapper mapper)
         {
-            this.meetupRepository = repository ?? throw new ArgumentNullException(nameof(repository));
+            meetupRepository = repository ?? throw new ArgumentNullException(nameof(repository));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
         public async Task<IEnumerable<MeetupDto>> Handle(GetMeetupsQuery request, CancellationToken cancellationToken)
         {
             IEnumerable<MeetupDto> meetupDtos = mapper.Map<IEnumerable<MeetupDto>>
-                (await this.meetupRepository.GetAllAsync());
-            
+                (await meetupRepository.GetAllAsync());
+
             return meetupDtos;
         }
     }

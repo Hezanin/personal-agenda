@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalAgenda.Business.Handlers
+namespace PersonalAgenda.Business.Handlers.QueryHandlers
 {
     public class GetMeetingHandler : IRequestHandler<GetMeetingQuery, MeetingDto>
     {
@@ -25,9 +25,9 @@ namespace PersonalAgenda.Business.Handlers
 
         public async Task<MeetingDto> Handle(GetMeetingQuery request, CancellationToken cancellationToken)
         {
-            Meeting meeting = await this.meetingRepository.GetByIdAsync(request.Id);
+            Meeting meeting = await meetingRepository.GetByIdAsync(request.Id);
 
-            return this.mapper.Map<MeetingDto>(meeting);
+            return mapper.Map<MeetingDto>(meeting);
         }
     }
 }

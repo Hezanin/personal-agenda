@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalAgenda.Business.Commands
+namespace PersonalAgenda.Business.Queries
 {
-    public record PostMeetupCommand(MeetupDto Meetup) : IRequest<MeetupDto>;
+    public record GetShoppingsQuery() : IRequest<IEnumerable<ShoppingDto>>;
 }
