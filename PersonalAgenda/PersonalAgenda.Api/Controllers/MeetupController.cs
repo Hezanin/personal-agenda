@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PersonalAgenda.Business.Commands;
 using PersonalAgenda.Business.Queries;
 using PersonalAgenda.Domain.Dtos;
 
@@ -9,26 +10,28 @@ namespace PersonalAgenda.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MeetingController : ControllerBase
+    public class MeetupController : ControllerBase
     {
         private readonly IMediator mediator;
-
-        public MeetingController(IMediator mediator)
+        public MeetupController(IMediator mediator)
         {
             this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
-
+        // GET: api/<MeetupController>
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await mediator.Send(new GetMeetingsQuery()));
-        }
-            
-        [HttpPost]
-        public void Post([FromBody] MeetingDto value)
-        {
+            return Ok(await this.mediator.Send(new GetMeetupsQuery()));
         }
 
+        // POST api/<MeetupController>
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] MeetupDto value)
+        {
+            return Created("",await this.mediator.Send(new PostMeetupCommand(value)));
+        }
+
+        // DELETE api/<MeetupController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

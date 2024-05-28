@@ -14,8 +14,13 @@ namespace PersonalAgenda.Business
         public MappingProfile()
         {
             CreateMap<Meeting, MeetingDto>();
+            CreateMap<MeetupDto, Meeting>();
+
             CreateMap<Meetup, MeetupDto>();
+            CreateMap<MeetupDto, Meetup>();
+            
             CreateMap<Shopping, ShoppingDto>();
+            CreateMap<ShoppingDto, Shopping>();
         }
     }
 }

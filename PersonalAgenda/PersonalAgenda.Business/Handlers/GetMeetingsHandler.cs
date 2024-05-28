@@ -25,8 +25,8 @@ namespace PersonalAgenda.Business.Handlers
 
         public async Task<IEnumerable<MeetingDto>> Handle(GetMeetingsQuery request, CancellationToken cancellationToken)
         {
-            IEnumerable<Meeting> meetings = await this.meetingRepository.GetAllAsync();
-            IEnumerable<MeetingDto> meetingDtos = mapper.Map<IEnumerable<MeetingDto>>(meetings);
+            IEnumerable<MeetingDto> meetingDtos = mapper.Map<IEnumerable<MeetingDto>>
+                (await this.meetingRepository.GetAllAsync());
 
             return meetingDtos;
         }

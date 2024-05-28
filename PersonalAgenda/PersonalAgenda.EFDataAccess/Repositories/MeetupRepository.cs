@@ -12,5 +12,17 @@ namespace PersonalAgenda.EFDataAccess.Repositories
         public MeetupRepository(PersonalAgendaContext personalAgendaContext) : base(personalAgendaContext)
         {
         }
+
+        public async Task<IEnumerable<Meetup>> GetMeetingByNameAsync(string meetName)
+        {
+            if (meetName == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            IQueryable<Meetup> allMeetups = await GetAllAsync();
+
+            return allMeetups.Where(m => m.Name == meetName).ToList();
+        }
     }
 }
