@@ -6,7 +6,7 @@ namespace PersonalAgenda.EFDataAccess.Repositories
     {
         public Task<IEntity> AddAsync(IEntity errand);
 
-        public Task DeleteAsync(IEntity errand);
+        public Task<IEntity> DeleteAsync(IEntity errand);
 
         public Task<IQueryable<IEntity>> GetAllAsync();
 

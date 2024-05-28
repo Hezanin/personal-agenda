@@ -29,8 +29,8 @@ namespace PersonalAgenda.Api.Controllers
         {
         }
 
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{name}")]
+        public void Delete(string name)
         {
         }
     }

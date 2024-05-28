@@ -33,10 +33,12 @@ namespace PersonalAgenda.Api.Controllers
             return Created("",await this.mediator.Send(new PostShoppingCommand(value)));
         }
 
-        // DELETE api/<ShoppingController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE api/<ShoppingController>/name
+        [HttpDelete("{name}")]
+        public async Task<IActionResult> Delete(string name)
         {
+            await this.mediator.Send(new DeleteShoppingCommand(name));
+            return NoContent();
         }
     }
 }

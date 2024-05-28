@@ -31,9 +31,9 @@ namespace PersonalAgenda.Api.Controllers
             return Created("",await this.mediator.Send(new PostMeetupCommand(value)));
         }
 
-        // DELETE api/<MeetupController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        // DELETE api/<MeetupController>/name
+        [HttpDelete("{name}")]
+        public void Delete(string name)
         {
         }
     }

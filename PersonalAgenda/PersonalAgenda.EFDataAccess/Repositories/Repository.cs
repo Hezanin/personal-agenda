@@ -54,7 +54,7 @@ namespace PersonalAgenda.EFDataAccess.Repositories
             return errand;
         }
 
-        public async Task DeleteAsync(IEntity errand)
+        public async Task<IEntity> DeleteAsync(IEntity errand)
         {
             if (errand == null)
             {
@@ -63,6 +63,8 @@ namespace PersonalAgenda.EFDataAccess.Repositories
 
             this.personalAgendaContext.Set<IEntity>().Remove(errand);
             await this.personalAgendaContext.SaveChangesAsync();
+
+            return errand;
         }
     }
 }
